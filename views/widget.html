@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwitchTools - Editor</title>
+    <link rel="stylesheet" href="/static/style/widget.css">
+    <script type="text/javascript" src="/static/js/widget.js" defer></script>
+    <script type="text/javascript" src="/static/js/editor-widget-chat-box.js" defer></script>
+</head>
+<body>
+    <div class="Modal__Background" style="display: none;">
+        <div class="Modal">
+            <svg class="Svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48" fill="#A970FF">
+                <path d="M480-80q-85 0-158-30.5T195-195q-54-54-84.5-127T80-480q0-84 30.5-157T195-764q54-54 127-85t158-31q75 0 140 24t117 66l-43 43q-44-35-98-54t-116-19q-145 0-242.5 97.5T140-480q0 145 97.5 242.5T480-140q145 0 242.5-97.5T820-480q0-30-4.5-58.5T802-594l46-46q16 37 24 77t8 83q0 85-31 158t-85 127q-54 54-127 84.5T480-80Zm-59-218L256-464l45-45 120 120 414-414 46 45-460 460Z"/>
+            </svg>
+            <i class="Tips">Add your widget on OBS with the link</i>
+            <code class="Url" id="url">Hello World !</code>
+            <button class="Button" id="close-modal">Done</button>
+        </div>
+    </div>
+    <div class="Preview">
+        <iframe src="/"></iframe>
+    </div>
+    <div class="Editor">
+        <div class="Group">
+            <label class="Name">Widget Type</label>
+            <select>
+                <optgroup label="Chat">
+                    <option selected>Chat Box</option>
+                </optgroup>
+                <optgroup label="Alert">
+                    <option>Follow</option>
+                    <option>Sub</option>
+                    <option>Sub Gift</option>
+                    <option>Raid</option>
+                    <option>Host</option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="Separator"></div>
+        <div class="Group">
+            <label class="Name">Container Border</label>
+            <div class="Edit">
+                <div class="Parameter">
+                    <label class="Name">Color</label>
+                    <div class="Input">
+                        <div class="ColorPicker"></div>
+                        <input spellcheck="false" type="text" value="#A970FF" id="container-border-color">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Width</label>
+                    <div class="Input Size">
+                        <input spellcheck="false" type="text" value="2px" id="container-border-width">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Type</label>
+                    <div class="Input">
+                        <select id="container-border-type">
+                            <option value="solid">Solid</option>
+                            <option value="dotted">Dotted</option>
+                            <option value="dashed">Dashed</option>
+                            <option value="double">Double</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Group">
+            <label class="Name">Container Generals</label>
+            <div class="Edit">
+                <div class="Parameter">
+                    <label class="Name">Background</label>
+                    <div class="Input">
+                        <div class="ColorPicker"></div>
+                        <input spellcheck="false" type="text" value="#A970FF00" id="container-background-color">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Padding</label>
+                    <div class="Input Size">
+                        <input spellcheck="false" type="text" value="5px" id="container-padding">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Width</label>
+                    <div class="Input Size">
+                        <input spellcheck="false" type="text" value="500px" id="container-width">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Separator"></div>
+        <div class="Group">
+            <label class="Name">Chat Border</label>
+            <div class="Edit">
+                <div class="Parameter">
+                    <label class="Name">Color</label>
+                    <div class="Input">
+                        <div class="ColorPicker"></div>
+                        <input spellcheck="false" type="text" value="#FEFEFE" id="chat-border-color">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Width</label>
+                    <div class="Input Size">
+                        <input spellcheck="false" type="text" value="0px" id="chat-border-width">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Type</label>
+                    <div class="Input">
+                        <select id="chat-border-type">
+                            <option value="solid">Solid</option>
+                            <option value="dotted">Dotted</option>
+                            <option value="dashed">Dashed</option>
+                            <option value="double">Double</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Group">
+            <label class="Name">Chat Backgrounds</label>
+            <div class="Edit">
+                <div class="Parameter">
+                    <label class="Name">Viewer</label>
+                    <div class="Input">
+                        <div class="ColorPicker"></div>
+                        <input spellcheck="false" type="text" value="#FEFEFE" id="chat-background-viewer">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Follower</label>
+                    <div class="Input">
+                        <div class="ColorPicker"></div>
+                        <input spellcheck="false" type="text" value="#FEFEFE" id="chat-background-follower">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Sub</label>
+                    <div class="Input">
+                        <div class="ColorPicker"></div>
+                        <input spellcheck="false" type="text" value="#FEFEFE" id="chat-background-sub">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Group">
+            <label class="Name">Chat Generals</label>
+            <div class="Edit">
+                <div class="Parameter">
+                    <label class="Name">Padding</label>
+                    <div class="Input Size">
+                        <input spellcheck="false" type="text" value="0px" id="chat-padding">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Username</label>
+                    <div class="Input Size">
+                        <input spellcheck="false" type="text" value="20px" id="chat-username">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Spacing</label>
+                    <div class="Input Size">
+                        <input spellcheck="false" type="text" value="0px" id="chat-spacing">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Message</label>
+                    <div class="Input Size">
+                        <input spellcheck="false" type="text" value="12px" id="chat-message">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Line height</label>
+                    <div class="Input Size">
+                        <input spellcheck="false" type="text" value="12px" id="chat-height">
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Avatar</label>
+                    <div class="Input">
+                        <select id="chat-avatar">
+                            <option value="hidden">Hidden</option>
+                            <option value="small">Small</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="Parameter">
+                    <label class="Name">Badges</label>
+                    <div class="Input">
+                        <select id="chat-badges">
+                            <option value="hidden">Hidden</option>
+                            <option value="before">Before Username</option>
+                            <option value="after">After Username</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Separator"></div>
+        <div class="Group">
+            <label class="Name">Chat Settings</label>
+            <div class="Edit">
+                <div class="Parameter">
+                    <label class="Name">Channel</label>
+                    <div class="Input">
+                        <input spellcheck="false" type="text" id="chat-settings-channel" value="lait_ahh">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Separator"></div>
+        <button class="Link">Get link</button>
+    </div>
+</body>
+</html>

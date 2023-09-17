@@ -1,0 +1,219 @@
+@font-face {
+    font-family: RobotoMono;
+    src: url('/static/fonts/RobotoMono-VariableFont_wght.ttf') format('truetype'),
+         url('/static/fonts/RobotoMono-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    color: #EFEFF1;
+    font-family: RobotoMono;
+}
+
+.Modal__Background {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000A8;
+}
+
+.Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    background-color: #18181B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Modal .Svg {
+    width: 100px;
+    height: 100px;
+}
+
+.Modal .Tips {
+    font-style: normal;
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin: 10px 0;
+}
+
+.Modal .Url {
+    background-color: #0E0E10;
+    padding: 5px;
+    user-select: none;
+    width: calc(100% - 10px);
+    cursor: pointer;
+    max-width: 600px;
+    overflow: hidden;
+    line-break: anywhere;
+}
+
+.Modal .Button {
+    margin-top: 10px;
+    font-family: RobotoMono;
+    padding: 5px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #A970FF;
+    border: #A970FF 1px solid;
+    color: #EFEFF1;
+    outline: none;
+    transition: background-color .15;
+}
+
+.Modal .Button:hover {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.Preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: calc(100% - 350px);
+    background-color: #0E0E10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Preview iframe {
+    border: none;
+    outline: none;
+}
+
+.Editor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 350px;
+    background-color: #18181B;
+    border-left: #53535F7A 1px solid;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.Editor::-webkit-scrollbar {
+    width: 8px;
+}
+  
+.Editor::-webkit-scrollbar-track {
+    background: #0E0E10; 
+}
+   
+.Editor::-webkit-scrollbar-thumb {
+    background: #A970FF; 
+}
+
+.Editor .Group {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: calc(100% - 20px);
+}
+
+.Editor .Group .Name {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+.Editor .Separator {
+    width: 100%;
+    height: 1px;
+    background-color: #53535F7A;
+}
+
+.Editor select {
+    font-family: RobotoMono;
+    padding: 5px;
+    background-color: #18181B;
+    color: #EFEFF1;
+    border: #53535F7A 2px solid;
+    border-radius: 4px;
+    outline: none;
+}
+
+.Editor .Edit {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 5px 10px;
+}
+
+.Editor .Edit .Parameter {
+    display: flex;
+    align-items: center;
+}
+
+.Editor .Edit .Parameter:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.Editor .Edit .Parameter .Name {
+    font-size: 0.9em;
+    margin-right: 5px;
+    margin-bottom: 0;
+    width: 100px;
+}
+
+.Editor .Edit .Parameter .Input {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    border: #53535F7A 2px solid;
+    width: 180px;
+}
+
+.Editor .Edit .Parameter .Input .ColorPicker {
+    margin-left: 1px;
+    margin-right: 1px;
+    width: 18px;
+    height: 18px;
+    background-color: #A970FF;
+}
+
+.Editor .Edit .Parameter .Input input {
+    font-family: RobotoMono;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #EFEFF1;
+    width: 100%;
+}
+
+.Editor .Edit .Parameter .Input select {
+    font-family: RobotoMono;
+    border: none;
+    outline: none;
+    color: #EFEFF1;
+    width: 100%;
+    padding: 0;
+}
+
+.Editor .Link {
+    font-family: RobotoMono;
+    margin: 10px;
+    padding: 5px;
+    width: calc(100% - 20px);
+    border-radius: 4px;
+    background-color: #A970FF;
+    border: #A970FF 1px solid;
+    color: #EFEFF1;
+    outline: none;
+    transition: background-color .15;
+}
+
+.Editor .Link:hover {
+    cursor: pointer;
+    background-color: transparent;
+}
